@@ -7,6 +7,15 @@ import { useForm, Head } from '@inertiajs/react';
 
 export default function Dashboard({ auth, chirps }) {
 
+    // const { data, setData, post, processing, reset, errors } = useForm({
+    //     title: '', //extra
+    //     message: '',
+    // });
+ 
+    // const submit = (e) => {
+    //     e.preventDefault();
+    //     post(route('chirps.store'), { onSuccess: () => reset() });
+    // };
 
     return (
         <AuthenticatedLayout
@@ -17,26 +26,15 @@ export default function Dashboard({ auth, chirps }) {
         >
             <Head title="Dashboard" />
 
-            
-
-            {/* <div className="py-12">
+            <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">Yey! You're logged in! <br></br> Now go look at some Note posts</div>
                     </div>
                 </div>
                 
-            </div>  */}
-            {/* <div className="max-w-2xl mx-auto p-4 sm:p-6 lg:p-8">
-                    <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-100 dark:bg-dots-lighter dark:bg-gray-900 selection:bg-red-500 selection:text-white">
+            </div> 
 
-                        <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
-                            {chirps.map(chirp =>
-                                <Chirp key={chirp.id} chirp={chirp} />
-                            )}
-                        </div>
-                    </div> 
-                </div> */}
         </AuthenticatedLayout>
     );
 }

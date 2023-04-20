@@ -18,7 +18,10 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->cascadeOnDelete();
             $table->string('title'); //extra
             $table->string('message');
+            $table->unsignedInteger('likes')->default();
             $table->timestamps();
+
+
         });
     }
 

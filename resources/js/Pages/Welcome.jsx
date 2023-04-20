@@ -3,7 +3,7 @@ import { Link, Head } from '@inertiajs/react';
 export default function Welcome(props) {
     return (
         <>
-            <Head title="Welcome" />
+            <Head title="House of Notes" />
             {/* This is the line responsible for bg colour */}
             <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-900 dark:bg-dots-lighter dark:bg-gray-500 selection:bg-blue-500 selection:text-white">
                 <div className="sm:fixed sm:top-0 sm:right-0 p-6 text-right">

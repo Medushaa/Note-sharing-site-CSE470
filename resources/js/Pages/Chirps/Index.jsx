@@ -4,6 +4,8 @@ import Chirp from '@/Components/Chirp';
 import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
 import { useForm, Head } from '@inertiajs/react';
+
+
  
 export default function Index({ auth, chirps }) {
     const { data, setData, post, processing, reset, errors } = useForm({
@@ -15,7 +17,7 @@ export default function Index({ auth, chirps }) {
         e.preventDefault();
         post(route('chirps.store'), { onSuccess: () => reset() });
     };
- 
+
     return (
         <AuthenticatedLayout auth={auth}>
             <Head title="Post Note" />

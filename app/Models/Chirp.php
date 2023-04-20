@@ -13,6 +13,7 @@ class Chirp extends Model
     protected $fillable = [
         'title',
         'message',
+        'likes',
     ];
 
     public function user(): BelongsTo
