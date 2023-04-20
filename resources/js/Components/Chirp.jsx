@@ -25,8 +25,11 @@ export default function Chirp({ chirp }) {
 
     return (
         <div className="p-6 flex space-x-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+            {/* <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-gray-600 -scale-x-100" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+            </svg> */}
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" className="w-7 h-7 stroke-blue-500">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
             </svg>
             <div className="flex-1">
                 <div className="flex justify-between items-center">
@@ -58,6 +61,7 @@ export default function Chirp({ chirp }) {
                     }
                 </div>
                                 {/* extra */}
+                                
                 <p className="mt-4 text-lg text-gray-900"><b>Title: <u>{chirp.title}</u></b></p> 
                 {/* <h className="mt-4 text-lg text-gray-900"><b></b>{chirp.message}</h> */}
                 {editing
@@ -69,7 +73,7 @@ export default function Chirp({ chirp }) {
                             <button className="mt-4" onClick={() => { setEditing(false); reset(); clearErrors(); }}>Cancel</button>
                         </div>
                     </form>
-                    : <p className="mt-4 text-lg text-gray-900">{chirp.message}</p>
+                    : <p className="mt-4 text-lg text-gray-900"><div dangerouslySetInnerHTML={{__html: chirp.message}}/></p>
                 }
             </div>
         </div>

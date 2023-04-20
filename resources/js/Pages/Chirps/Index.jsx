@@ -35,7 +35,7 @@ export default function Index({ auth, chirps }) {
                     <PrimaryButton className="mt-4" disabled={processing}>Post Note</PrimaryButton>
                 </form>
 
-                <div className="mt-6 bg-white shadow-sm rounded-lg divide-y">
+                <div className="mt-6 bg-white shadow-sm rounded-lg divide-y-4">
                     {chirps.map(chirp =>
                         <Chirp key={chirp.id} chirp={chirp} />
                     )}
