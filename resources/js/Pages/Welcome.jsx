@@ -10,7 +10,7 @@ export default function Welcome(props) {
                     {props.auth.user ? (
                         <Link
                             href={route('dashboard')}
-                            className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-100 dark:hover:text-grey focus:outline focus:outline-5 focus:rounded-sm focus:outline-blue-500"
+                            className="font-semibold text-gray-600 hover:text-gray-400 dark:text-gray-100 dark:hover:text-grey focus:outline focus:outline-5 focus:rounded-sm focus:outline-blue-500"
                         >
                             Dashboard
                         </Link>

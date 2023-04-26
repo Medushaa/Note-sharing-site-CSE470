@@ -3,12 +3,9 @@ import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout';
 //import { useSpring, animated } from 'react-spring';
 
 import { usePage, Head } from '@inertiajs/react';
+import Chirp from '@/Components/Chirp';
 
-// import { Routes, Route, useParams } from 'react-router-dom';
-// import { useHistory ,useLocation } from 'react-router-dom';
-// var location = useLocation()
-//var path = location.pathname
-//var path = "hello"
+
 
 
 
@@ -27,14 +24,15 @@ export default function Post({ auth, chirps }) {
             <div className="py-12">
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        <div className="p-6 text-gray-900"> Post number: {props.id} </div>
-
-                        {/* <div className="p-6 text-gray-900"> Post number: <UserDetails userdetails={chirp.id} /> </div> */}
-
-                        <div id="disqus_thread"></div>
+                        <div className="p-6 text-2xl flex justify-center items-center text-gray-900"> 💬 Comment section for the post: <b className="underline">{props.id}</b> </div>
                     </div>
                 </div>
-                
+            </div> 
+
+            <div className="py-12">
+            
+                        <div className="p-6 text-2xl flex justify-center items-center text-gray-900"> put disqus here </div>
+                        <div id="disqus_thread"></div>
             </div> 
 
         </AuthenticatedLayout>

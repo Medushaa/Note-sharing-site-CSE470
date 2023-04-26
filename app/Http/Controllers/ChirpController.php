@@ -28,9 +28,10 @@ class ChirpController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function getInfo($id)
     {
-        //
+        $chirp = Chirp::where('id', $id)->first(); //first gets the first item that matches id
+        return view('posts.show', compact('chirp'));
     }
 
     /**
@@ -54,13 +55,8 @@ class ChirpController extends Controller
      */
     public function show($id)
     {
-
-        
+        //[$id, $b, $c, $d, $e, $f, $g] = $info;
         return redirect()->route('post', $id);
-        // return view('post', compact('id')); //goes to post.blade.php
-        //return view('post', ['id'=>$id]); //goes to post.blade.php
-                //return view('post', compact("post"))->with("id","message");
-        //return redirect(route('chirps.index', $id));
     }
 
 

@@ -12,7 +12,7 @@ import { createRoot } from "react-dom/client";
 import {createBrowserRouter, RouterProvider, Route} from "react-router-dom";
 
 dayjs.extend(relativeTime);
- 
+
 export default function Chirp({ chirp }) {
 
     //edit chirps
@@ -27,19 +27,8 @@ export default function Chirp({ chirp }) {
         patch(route('chirps.update', chirp.id), { onSuccess: () => setEditing(false) });
     };
 
+    const chirpInfo = [chirp.id, chirp.user.name, chirp.title, chirp.message, chirp.created_at, chirp.updated_at, chirp.likes]
 
-
-    // const { state } = useLocation();
-
-
-    // const like = (e) => {
-    //     e.preventDefault();
-    //     patch(route('chirps.like', chirp.id), { onSuccess: () => setLiking(false) });
-    // };
-
-    // this.state = {
-    //     isButtonDisabled: false
-    //   }
 
     return (
         <div className="p-6 flex space-x-2">
@@ -96,9 +85,7 @@ export default function Chirp({ chirp }) {
                 <div>
                     <br />
                     <Link className="font-semibold text-gray-600 dark:text-gray-100 dark:hover:text-grey focus:outline focus:outline-5 focus:rounded-sm focus:outline-blue-500"
-                            href={route('chirps.like', chirp.id)}
-                            //href={route('chirps.show', chirp.likes)}
-                            // href="{{ URL('/post/'.$val->chirp.id )}}"      
+                            href={route('chirps.like', chirp.id)} 
                       >
                     <button 
                         class="px-4 py-2 hover:bg-blue-700 text-white bg-blue-500 br-5" style={{borderRadius: '5px'}}
@@ -107,10 +94,11 @@ export default function Chirp({ chirp }) {
                     </button></Link>
                     {' '}
                     <Link className="font-semibold text-gray-600 dark:text-gray-100 dark:hover:text-grey focus:outline focus:outline-5 focus:rounded-sm focus:outline-blue-500"
-                            href={route('chirps.show', chirp.id)} >
+
+                            href={route('chirps.show', chirp.title)} >
                     <button class="px-4 py-2 hover:bg-gray-900 text-gray-100 hover:bold bg-gray-700 br-5" style={{borderRadius: '5px'}}>
 
-                            Open Post
+                            See Comments
                         
                     </button></Link>
 

@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ChirpController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+
 use Inertia\Inertia;
 
 /*
@@ -31,9 +32,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-Route::get('/post/{id}', function (string $id) {
+// Route::get('/post/{id}', function (string $id) {
+//     return Inertia::render('Post', ['id' => $id]);
+// })->middleware(['auth', 'verified'])->name('post');
+
+Route::get('/post/{id}', function ($id) {
+    //[$a, $b, $c, $d, $e, $f, $g] = $info;
     return Inertia::render('Post', ['id' => $id]);
-    //return 'User '.$id;
 })->middleware(['auth', 'verified'])->name('post');
 
 Route::middleware('auth')->group(function () {
