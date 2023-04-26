@@ -6,7 +6,10 @@ import InputError from '@/Components/InputError';
 import PrimaryButton from '@/Components/PrimaryButton';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
-import { useForm, usePage } from '@inertiajs/react';
+import { useForm, usePage, Link} from '@inertiajs/react';
+import Dashboard from '@/Pages/Dashboard';
+import { createRoot } from "react-dom/client";
+import {createBrowserRouter, RouterProvider, Route} from "react-router-dom";
 
 dayjs.extend(relativeTime);
  
@@ -15,6 +18,7 @@ export default function Chirp({ chirp }) {
     //edit chirps
     const { auth } = usePage().props;
     const [editing, setEditing] = useState(false);
+    // const [liking, setLiking] = useState(false);
     const { data, setData, patch, clearErrors, reset, errors } = useForm({
         message: chirp.message,
     });
@@ -22,6 +26,16 @@ export default function Chirp({ chirp }) {
         e.preventDefault();
         patch(route('chirps.update', chirp.id), { onSuccess: () => setEditing(false) });
     };
+
+
+
+    // const { state } = useLocation();
+
+
+    // const like = (e) => {
+    //     e.preventDefault();
+    //     patch(route('chirps.like', chirp.id), { onSuccess: () => setLiking(false) });
+    // };
 
     // this.state = {
     //     isButtonDisabled: false
@@ -81,12 +95,26 @@ export default function Chirp({ chirp }) {
                 }
                 <div>
                     <br />
-                
-                <button 
-                    // disabled={this.state.isButtonDisabled}
-                    class="{{ $post->liked() ? 'bg-blue-900' : '' }} px-4 py-2 text-white bg-gray-800">
-                    {chirp.likes - 1} likes
-                </button>
+                    <Link className="font-semibold text-gray-600 dark:text-gray-100 dark:hover:text-grey focus:outline focus:outline-5 focus:rounded-sm focus:outline-blue-500"
+                            href={route('chirps.like', chirp.id)}
+                            //href={route('chirps.show', chirp.likes)}
+                            // href="{{ URL('/post/'.$val->chirp.id )}}"      
+                      >
+                    <button 
+                        class="px-4 py-2 hover:bg-blue-700 text-white bg-blue-500 br-5" style={{borderRadius: '5px'}}
+                        href="https://mui.com/material-ui/react-button/">
+                        {chirp.likes - 1} likes
+                    </button></Link>
+                    {' '}
+                    <Link className="font-semibold text-gray-600 dark:text-gray-100 dark:hover:text-grey focus:outline focus:outline-5 focus:rounded-sm focus:outline-blue-500"
+                            href={route('chirps.show', chirp.id)} >
+                    <button class="px-4 py-2 hover:bg-gray-900 text-gray-100 hover:bold bg-gray-700 br-5" style={{borderRadius: '5px'}}>
+
+                            Open Post
+                        
+                    </button></Link>
+
+
                 </div>
             </div>
         </div>

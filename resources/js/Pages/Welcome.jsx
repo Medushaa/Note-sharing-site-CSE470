@@ -4,8 +4,8 @@ export default function Welcome(props) {
     return (
         <>
             <Head title="House of Notes" />
-            {/* This is the line responsible for bg colour */}
-            <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-900 dark:bg-dots-lighter dark:bg-gray-500 selection:bg-blue-500 selection:text-white">
+            {/* This is the line responsible for bg colour (uses tailwind css*/}
+            <div className="relative sm:flex sm:justify-center sm:items-center min-h-screen bg-dots-darker bg-center bg-gray-200 dark:bg-dots-lighter dark:bg-gray-800 selection:bg-blue-900 selection:text-white">
                 <div className="sm:fixed sm:top-0 sm:right-0 p-6 text-right">
                     {props.auth.user ? (
                         <Link
@@ -18,14 +18,14 @@ export default function Welcome(props) {
                         <>
                             <Link
                                 href={route('login')}
-                                className="font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-500"
+                                className="font-semibold text-gray-600 hover:underline dark:text-gray-100 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-500"
                             >
                                 Log in
                             </Link>
 
                             <Link
                                 href={route('register')}
-                                className="ml-4 font-semibold text-gray-600 hover:text-gray-900 dark:text-gray-100 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-500"
+                                className="ml-4 font-semibold text-gray-600 hover:underline dark:text-gray-100 dark:hover:text-white focus:outline focus:outline-2 focus:rounded-sm focus:outline-blue-500"
                             >
                                 Register
                             </Link>
@@ -36,7 +36,7 @@ export default function Welcome(props) {
                 <div className="max-w-7xl mx-auto p-6 lg:p-8">
                     <div className="flex justify-center">
 
-                        <h6 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
+                        <h6 className="mt-6 text-6xl font-sans font-semibold hover:underline text-gray-900 dark:text-white">
                         House of Notes
                         </h6>
 

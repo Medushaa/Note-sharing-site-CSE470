@@ -6,9 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Chirp extends Model
+class Chirp extends Model 
 {
     use HasFactory;
+    // use Likes;
 
     protected $fillable = [
         'title',

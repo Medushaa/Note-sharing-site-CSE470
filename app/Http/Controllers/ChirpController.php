@@ -52,17 +52,32 @@ class ChirpController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Chirp $chirp)
+    public function show($id)
     {
-        //
+
+        
+        return redirect()->route('post', $id);
+        // return view('post', compact('id')); //goes to post.blade.php
+        //return view('post', ['id'=>$id]); //goes to post.blade.php
+                //return view('post', compact("post"))->with("id","message");
+        //return redirect(route('chirps.index', $id));
     }
+
 
     /**
      * Show the form for editing the specified resource.
      */
     public function edit(Chirp $chirp)
     {
-        //
+
+    }
+
+    //increase likes column of that chirp by one. route in web.php and called in chirp.jsx
+    public function like($id)
+    {
+        $chirp = Chirp::findOrFail($id);
+        $chirp->increment('likes');
+        return redirect()->back();
     }
 
     /**
@@ -87,4 +102,5 @@ class ChirpController extends Controller
         $chirp->delete();
         return redirect(route('chirps.index'));
     }
+
 }
