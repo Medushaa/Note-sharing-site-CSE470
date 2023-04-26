@@ -95,7 +95,7 @@ export default function Chirp({ chirp }) {
                     {' '}
                     <Link className="font-semibold text-gray-600 dark:text-gray-100 dark:hover:text-grey focus:outline focus:outline-5 focus:rounded-sm focus:outline-blue-500"
 
-                            href={route('chirps.show', chirp.title)} >
+                            href={route('chirps.show', chirp.id)} >
                     <button class="px-4 py-2 hover:bg-gray-900 text-gray-100 hover:bold bg-gray-700 br-5" style={{borderRadius: '5px'}}>
 
                             See Comments
