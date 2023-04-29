@@ -9,11 +9,31 @@ module.exports = {
         './resources/js/**/*.jsx',
     ],
 
+
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            animation: {
+                blob: "blob 14s infinite",
+            },
+            keyframes: {
+                blob: {
+                    "0%": {
+                        transform: "translate(0px, 0px) scale(1)",
+                    },
+                    "33%": {
+                        transform: "translate(300px, 300px) scale(1.1)",
+                    },
+                    "66%": {
+                        transform: "translate(-300px, 500px) scale(0.9)",
+                    },
+                    "100%": {
+                        transform: "translate(0px, 0px) scale(1)",
+                    },
+                }
+            }
         },
     },
 

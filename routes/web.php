@@ -32,9 +32,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 
-// Route::get('/post/{id}', function (string $id) {
-//     return Inertia::render('Post', ['id' => $id]);
-// })->middleware(['auth', 'verified'])->name('post');
+Route::get('/comfy-zone', function () {
+    return Inertia::render('comfy');
+})->middleware(['auth', 'verified'])->name('comfy');
 
 Route::get('/post/{id}', function ($id) {
     //[$a, $b, $c, $d, $e, $f, $g] = $info;
@@ -49,7 +49,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('chirps', ChirpController::class)
-    ->only(['index', 'store', 'update', 'destroy','show'])
+    ->only(['index', 'store', 'update', 'destroy','show','getInfo'])
     ->middleware(['auth', 'verified']);
 
 

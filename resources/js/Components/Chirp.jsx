@@ -7,9 +7,7 @@ import PrimaryButton from '@/Components/PrimaryButton';
 import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 import { useForm, usePage, Link} from '@inertiajs/react';
-import Dashboard from '@/Pages/Dashboard';
-import { createRoot } from "react-dom/client";
-import {createBrowserRouter, RouterProvider, Route} from "react-router-dom";
+
 
 dayjs.extend(relativeTime);
 
@@ -27,8 +25,6 @@ export default function Chirp({ chirp }) {
         patch(route('chirps.update', chirp.id), { onSuccess: () => setEditing(false) });
     };
 
-    const chirpInfo = [chirp.id, chirp.user.name, chirp.title, chirp.message, chirp.created_at, chirp.updated_at, chirp.likes]
-
 
     return (
         <div className="p-6 flex space-x-2">
@@ -43,7 +39,7 @@ export default function Chirp({ chirp }) {
                     <div>
                         <span className="text-gray-800">{chirp.user.name}</span>
                         <small className="ml-2 text-sm text-gray-600">{dayjs(chirp.created_at).fromNow()}</small>
-                        { chirp.created_at !== chirp.updated_at && <small className="text-sm text-gray-600"> &middot; edited</small>}
+                        {/* { chirp.created_at !== chirp.updated_at && <small className="text-sm text-gray-600"> &middot; edited</small>} */}
                     </div>
                     {chirp.user.id === auth.user.id &&
 
@@ -69,7 +65,7 @@ export default function Chirp({ chirp }) {
                 </div>
                                 {/* extra */}
                                 
-                <p className="mt-4 text-lg text-gray-900"><b>Title: <u>{chirp.title}</u></b></p> 
+                <p className="mt-4 text-lg text-gray-900"><b>Post no. {chirp.id} : <u>{chirp.title}</u></b></p> 
                 {/* <h className="mt-4 text-lg text-gray-900"><b></b>{chirp.message}</h> */}
                 {editing
                     ? <form onSubmit={submit}>
@@ -98,7 +94,7 @@ export default function Chirp({ chirp }) {
                             href={route('chirps.show', chirp.id)} >
                     <button class="px-4 py-2 hover:bg-gray-900 text-gray-100 hover:bold bg-gray-700 br-5" style={{borderRadius: '5px'}}>
 
-                            See Comments
+                            Open Post
                         
                     </button></Link>
 
