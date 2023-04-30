@@ -38,6 +38,7 @@ export default function Post({ auth}) {
             message = Allchirps[i].message;
             created_at = Allchirps[i].created_at;
             author = Allchirps[i].user.name;
+            // pdf_file = Allchirps[i].pdf_file;
             break;
         } 
     }
@@ -54,6 +55,7 @@ export default function Post({ auth}) {
                         <div className="pt-6 px-6 text-2xl flex justify-center items-center text-gray-900"> Title: {' '}<b className="underline"> {title}</b> </div>
                         <p className="px-6 text-gray-900 flex justify-center items-center "> Created at: {dayjs(created_at).fromNow()}</p>
                         <p className="px-6 text-gray-900 text-center "> Author: {author}</p>
+                        <p className="px-6 text-gray-600 text-sm text-center "> (access the attached pdf from the posts page)</p>
 
                         <p className="p-6 text-xl text-gray-900"><div dangerouslySetInnerHTML={{__html: message}}/></p>
                         <p className="p-6 text-gray-900 text-center "> ⬇️ Comment section for Post no. {props.id} ⬇️</p>
@@ -62,14 +64,6 @@ export default function Post({ auth}) {
 
 
                     </div>
-                    {/* <Link className="font-semibold text-gray-600 dark:text-gray-100 dark:hover:text-grey focus:outline focus:outline-5 focus:rounded-sm focus:outline-blue-500"
-
-                        href={route('chirps.index', props.id)} >
-                        <button class="px-4 py-2 hover:bg-gray-900 text-gray-100 hover:bold bg-gray-700 br-5" style={{borderRadius: '5px'}}>
-
-                        See Post
-
-                        </button></Link> */}
 
                 </div>
             </div> 

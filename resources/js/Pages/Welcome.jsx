@@ -66,7 +66,7 @@ export default function Welcome(props) {
                                     </div>
 
                                     <h2 className="mt-6 text-xl font-semibold text-gray-900 dark:text-white">
-                                        Univerty Notes Sharing
+                                        University Notes Sharing
                                     </h2>
 
                                     <p className="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">

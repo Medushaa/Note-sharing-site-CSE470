@@ -65,8 +65,9 @@ export default function Chirp({ chirp }) {
                 </div>
                                 {/* extra */}
                                 
-                <p className="mt-4 text-lg text-gray-900"><b>Post no. {chirp.id} : <u>{chirp.title}</u></b></p> 
-                {/* <h className="mt-4 text-lg text-gray-900"><b></b>{chirp.message}</h> */}
+                <p className="mt-4 text-lg text-gray-900"><b>Title: <u>{chirp.title}</u></b></p> 
+
+
                 {editing
                     ? <form onSubmit={submit}>
                         <textarea value={data.message} onChange={e => setData('message', e.target.value)} className="mt-4 w-full text-gray-900 border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 rounded-md shadow-sm"></textarea>
@@ -76,8 +77,19 @@ export default function Chirp({ chirp }) {
                             <button className="mt-4" onClick={() => { setEditing(false); reset(); clearErrors(); }}>Cancel</button>
                         </div>
                     </form>
-                    : <p className="mt-4 text-lg text-gray-900"><div dangerouslySetInnerHTML={{__html: chirp.message}}/></p>
+                    : <p className="mt-2 text-lg text-gray-900"><div dangerouslySetInnerHTML={{__html: chirp.message}}/></p>
                 }
+
+                <div className="pt-2 px-2 text-blue-600 underline "> 
+                {chirp.pdf_file !== "not attached" &&
+                <a href={`/pdf/${chirp.pdf_file}`} target="_blank"> Click to open the PDF</a> 
+                }
+                </div>
+                {chirp.pdf_file === "not attached" &&
+                <p className=" text-sm text-gray-900">(pdf: {chirp.pdf_file})</p> 
+                }
+
+  
                 <div>
                     <br />
                     <Link className="font-semibold text-gray-600 dark:text-gray-100 dark:hover:text-grey focus:outline focus:outline-5 focus:rounded-sm focus:outline-blue-500"

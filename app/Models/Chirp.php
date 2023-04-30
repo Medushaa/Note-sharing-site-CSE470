@@ -14,6 +14,7 @@ class Chirp extends Model
     protected $fillable = [
         'title',
         'message',
+        'pdf_file',
         'likes',
     ];
 

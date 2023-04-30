@@ -41,7 +41,7 @@ export default function comfy({ auth}) {
                 {/* Background blobs */}
                 <div class="absolute top-0 -left-20 w-72 h-72 bg-purple-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob"></div>
                 <div class="absolute top-0 -right-20 w-72 h-72 bg-sky-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-2000"></div>
-                <div class="absolute -top-5 left-40 w-72 h-72 bg-pink-300 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-4000"></div>
+                <div class="absolute -top-5 left-40 w-72 h-72 bg-green-200 rounded-full mix-blend-multiply filter blur-2xl opacity-70 animate-blob animation-delay-4000"></div>
 
 
             <div className="relative flex flex-col items-center justify-center py-12">

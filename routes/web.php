@@ -55,5 +55,8 @@ Route::resource('chirps', ChirpController::class)
 
 Route::get('/chirps/{id}/like', [ChirpController::class, 'like'])->name('chirps.like');
 
+// Route::get('/upload', function () {
+//     return view('upload');
+// });
 
 require __DIR__.'/auth.php';
